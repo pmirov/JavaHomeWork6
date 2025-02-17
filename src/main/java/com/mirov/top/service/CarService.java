@@ -12,4 +12,9 @@ public class CarService {
     {
         return carDao.selectAll();
     }
+
+    public List<Car> findManufacturer()
+    {
+        return carDao.selectManufacturer();
+    }
 }

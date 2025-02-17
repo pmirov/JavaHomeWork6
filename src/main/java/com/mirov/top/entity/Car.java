@@ -3,9 +3,38 @@ package com.mirov.top.entity;
 public class Car {
     private int id;
     private CarType type;
+    private String manufacturer;
+    private String name;
+    private float volume;
+    private int creationDate;
+    private String color;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVolume(float volume) {
+        this.volume = volume;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setCreationDate(int creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public int getId() {
         return id;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public void setId(int id) {
@@ -22,9 +51,12 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", type=" + type +
-                '}';
+        return  "id :" + id +
+                ", производитель: " + manufacturer +
+                ", марка: " + name +
+                ", объем двигателя: " + volume +
+                ", дата выпуска: " + creationDate +
+                ", цвет: " + color +
+                ", тип кузова: " + type;
     }
 }

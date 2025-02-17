@@ -11,6 +11,10 @@ public class Main {
         for (Car car : cars) {
             System.out.println(car);
         }
-
+        var manufacturer = carService.findManufacturer();
+                ;
+        for (Car car : manufacturer) {
+            System.out.println(car.getManufacturer());
+        }
     }
 }
