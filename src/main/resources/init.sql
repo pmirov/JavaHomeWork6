@@ -26,4 +26,24 @@ values
     ('Changan', 'CS75', 2.0, 2021, 'белый', 'SUV'),
     ('Mercedes-Benz', 'E-Class', 3.0, 2024, 'серый', 'sedan');
 
+insert into cars (manufacturer, name, volume, creationDate, color, type)
+values
+('Audi', 'Q5', 2.0, 2022, 'черный', 'SUV'),
+('Audi', 'A4', 2.0, 2023, 'белый', 'sedan'),
+('Toyota', 'RAV4', 2.5, 2023, 'серебристая', 'SUV'),
+('Toyota', 'Corolla', 1.8, 2021, 'красная', 'sedan'),
+('Ford', 'Explorer', 3.5, 2022, 'синий', 'SUV'),
+('Ford', 'F-150', 3.5, 2023, 'черный', 'pickup'),
+('Lada', 'Granta', 1.6, 2021, 'белая', 'sedan'),
+('Lada', 'Xray', 1.6, 2022, 'зеленая', 'crossover'),
+('Geely', 'Coolray', 1.5, 2023, 'красная', 'crossover'),
+('Geely', 'Emgrand', 1.5, 2021, 'серый', 'sedan'),
+('BYD', 'Tang', 2.0, 2023, 'черный', 'SUV'),
+('BYD', 'Han', 3.0, 2022, 'белая', 'sedan'),
+('Changan', 'CS35', 1.6, 2021, 'синий', 'crossover'),
+('Changan', 'Eado', 1.5, 2022, 'серебристая', 'sedan'),
+('Mercedes-Benz', 'GLC', 2.0, 2023, 'черный', 'SUV'),
+('Mercedes-Benz', 'C-Class', 2.0, 2022, 'красная', 'sedan');
+
+
 select * from cars
