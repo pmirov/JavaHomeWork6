@@ -17,4 +17,9 @@ public class CarService {
     {
         return carDao.selectManufacturer();
     }
+    public List<Car> findCarAmount()
+    {
+        return carDao.selectCarAmount();
+    }
 }
+

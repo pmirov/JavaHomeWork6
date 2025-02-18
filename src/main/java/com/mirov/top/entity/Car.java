@@ -8,6 +8,15 @@ public class Car {
     private float volume;
     private int creationDate;
     private String color;
+    private int amount;
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public void setName(String name) {
         this.name = name;
