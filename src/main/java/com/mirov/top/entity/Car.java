@@ -1,6 +1,7 @@
 package com.mirov.top.entity;
 
-public class Car {
+public class Car
+{
     private int id;
     private CarType type;
     private String manufacturer;
@@ -68,4 +69,9 @@ public class Car {
                 ", цвет: " + color +
                 ", тип кузова: " + type;
     }
+
+//    @Override
+//    public int compareTo(Car o1, Car o2) {
+//        return o1.getAmount() - o2.getAmount();
+//    }
 }
