@@ -45,6 +45,21 @@ public class Main {
             System.out.println("Машин такого года выпуска нет!");
         }
 
+        System.out.println("Введите начальный диапазон года выпуска автомобиля:");
+        int startCarYear = sc.nextInt();
+        System.out.println("Введите конечный диапазон года выпуска автомобиля:");
+        int finalCarYear = sc.nextInt();
+        checkYear = false;
+        for (Car car : cars) {
+            if(car.getCreationDate() >= startCarYear && car.getCreationDate() <= finalCarYear)
+            {
+                System.out.println(car.getManufacturer() + " " + car.getName());
+                checkYear = true;
+            }
+        }
+        if (!checkYear) {
+            System.out.println("Машин в таком диапазоне года выпуска нет!");
+        }
 
 
 
