@@ -30,6 +30,21 @@ public class Main {
 
         System.out.println(carAmount.getLast().getManufacturer() + " " + carAmount.getLast().getAmount());
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите год выпуска автомобиля:");
+        int carYear = sc.nextInt();
+        boolean checkYear = false;
+        for (Car car : cars) {
+           if(carYear == car.getCreationDate())
+            {
+                System.out.println(car.getManufacturer() + " " + car.getName());
+                checkYear = true;
+            }
+        }
+        if (!checkYear) {
+            System.out.println("Машин такого года выпуска нет!");
+        }
+
 
 
 

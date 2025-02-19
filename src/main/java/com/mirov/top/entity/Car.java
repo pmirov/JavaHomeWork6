@@ -11,6 +11,10 @@ public class Car
     private String color;
     private int amount;
 
+    public String getName() {
+        return name;
+    }
+
     public int getAmount() {
         return amount;
     }
@@ -21,6 +25,10 @@ public class Car
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCreationDate() {
+        return creationDate;
     }
 
     public void setVolume(float volume) {
