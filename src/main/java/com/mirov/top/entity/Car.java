@@ -78,8 +78,5 @@ public class Car
                 ", тип кузова: " + type;
     }
 
-//    @Override
-//    public int compareTo(Car o1, Car o2) {
-//        return o1.getAmount() - o2.getAmount();
-//    }
+
 }

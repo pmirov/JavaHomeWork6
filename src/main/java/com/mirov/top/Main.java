@@ -7,60 +7,31 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         CarService carService = new CarService();
-        var cars = carService.findAll();
 
-        for (Car car : cars) {
-            System.out.println(car);
-        }
-        var manufacturer = carService.findManufacturer();
+        //Вывод всех автомобилей
+        carService.printAllCars();
 
-        for (Car car : manufacturer) {
-            System.out.println(car.getManufacturer());
-        }
+        //Вывод всех произоводителей
+        carService.printManufacturers();
 
-       var carAmount = carService.findCarAmount();
+        //Вывод количество автомобилей определенного производителя
+        carService.printCarAmounts();
 
-        for (Car car : carAmount) {
-            System.out.println(car.getManufacturer() + " " + car.getAmount());
+        //Вывод наибольшего и наименьшего количества автомобилей
+        carService.printMaxAndMinAmount();
 
-        }
-        carAmount.sort(Comparator.comparing(Car::getAmount).reversed());
-
-        System.out.println(carAmount.getFirst().getManufacturer() + " " + carAmount.getFirst().getAmount());
-
-        System.out.println(carAmount.getLast().getManufacturer() + " " + carAmount.getLast().getAmount());
-
+        //Вывод автомобилей по конкретному году выпуска
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите год выпуска автомобиля:");
         int carYear = sc.nextInt();
-        boolean checkYear = false;
-        for (Car car : cars) {
-           if(carYear == car.getCreationDate())
-            {
-                System.out.println(car.getManufacturer() + " " + car.getName());
-                checkYear = true;
-            }
-        }
-        if (!checkYear) {
-            System.out.println("Машин такого года выпуска нет!");
-        }
+        carService.printCarsByYear(carYear);
 
+        //Вывод автомобилей по диапазону года выпуска
         System.out.println("Введите начальный диапазон года выпуска автомобиля:");
         int startCarYear = sc.nextInt();
         System.out.println("Введите конечный диапазон года выпуска автомобиля:");
         int finalCarYear = sc.nextInt();
-        checkYear = false;
-        for (Car car : cars) {
-            if(car.getCreationDate() >= startCarYear && car.getCreationDate() <= finalCarYear)
-            {
-                System.out.println(car.getManufacturer() + " " + car.getName());
-                checkYear = true;
-            }
-        }
-        if (!checkYear) {
-            System.out.println("Машин в таком диапазоне года выпуска нет!");
-        }
-
+        carService.printCarsByYearRange(startCarYear,finalCarYear);
 
 
     }
