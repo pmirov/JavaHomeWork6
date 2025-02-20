@@ -1,5 +1,6 @@
 package com.mirov.top;
 import com.mirov.top.entity.Car;
+import com.mirov.top.entity.CarType;
 import com.mirov.top.service.CarService;
 
 import java.util.*;
@@ -44,9 +45,14 @@ public class Main {
 //        carService.printCarsByColor(colorCar);
 
         //Фильтр для отображения автомобилей по объему двигателя
-        System.out.println("Введите цвет автомобиля:");
-        int volume = sc.nextInt();
-        carService.printCarsByVolume(volume);
+//        System.out.println("Введите объем двигателя автомобиля:");
+//        int volume = sc.nextInt();
+//        carService.printCarsByVolume(volume);
+
+        //Фильтр для отображения автомобилей по типу кузова
+        System.out.println("Введите тип кузова автомобиля:");
+        CarType carType = CarType.valueOf(sc.next());
+        carService.printCarsByType(carType);
 
     }
 }

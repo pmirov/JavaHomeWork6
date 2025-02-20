@@ -2,6 +2,7 @@ package com.mirov.top.service;
 
 import com.mirov.top.dao.CarDao;
 import com.mirov.top.entity.Car;
+import com.mirov.top.entity.CarType;
 
 import java.util.*;
 
@@ -157,6 +158,22 @@ public class CarService {
         }
         if (!checkCar) {
             System.out.println("Машин с таким объемом двигателя нет!");
+        }
+    }
+
+    public void printCarsByType(CarType carType)
+    {
+        boolean checkCar = false;
+        List<Car> cars = findAll();
+        for (Car car : cars) {
+            if(car.getType().equals(carType))
+            {
+                System.out.println(car.getManufacturer() + " " + car.getName() + ", тип кузова: " + car.getType());
+                checkCar = true;
+            }
+        }
+        if (!checkCar) {
+            System.out.println("Машин с таким типом кузова нет!");
         }
     }
 
