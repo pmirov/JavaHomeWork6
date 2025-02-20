@@ -10,39 +10,44 @@
 --
 -- );
 
--- insert into cars (manufacturer, name, volume, creationDate, color, type)
--- values ('Ford', 'Mustang', 3.2, 1993,  'коричневый', 'sedan'),
---        ('BMW', 'X5', 4.4, 2025,  'черная', 'SUV'),
---     ('Audi', 'A6', 2.0, 2023, 'синий', 'sedan'),
---     ('Toyota', 'Camry', 2.5, 2022, 'белая', 'sedan'),
---     ('Ford', 'Mustang', 5.0, 2021, 'красная', 'coupe'),
---     ('Lada', 'Vesta', 1.6, 2020, 'серебристая', 'sedan'),
---     ('Lada', 'Niva', 1.7, 2019, 'зеленая', 'SUV'),
---     ('Geely', 'Atlas', 2.0, 2023, 'черный', 'SUV'),
---     ('BYD', 'Song', 1.5, 2022, 'синий', 'crossover'),
---     ('Changan', 'CS75', 2.0, 2021, 'белый', 'SUV'),
---     ('Mercedes-Benz', 'E-Class', 3.0, 2024, 'серый', 'sedan'),
--- ('Audi', 'Q5', 2.0, 2022, 'черный', 'SUV'),
--- ('Audi', 'A4', 2.0, 2023, 'белый', 'sedan'),
--- ('Toyota', 'RAV4', 2.5, 2023, 'серебристая', 'SUV'),
--- ('Toyota', 'Corolla', 1.8, 2021, 'красная', 'sedan'),
--- ('Ford', 'Explorer', 3.5, 2022, 'синий', 'SUV'),
--- ('Ford', 'F-150', 3.5, 2023, 'черный', 'pickup'),
--- ('Lada', 'Granta', 1.6, 2021, 'белая', 'sedan'),
--- ('Lada', 'Xray', 1.6, 2022, 'зеленая', 'crossover'),
--- ('Geely', 'Coolray', 1.5, 2023, 'красная', 'crossover'),
--- ('Geely', 'Emgrand', 1.5, 2021, 'серый', 'sedan'),
--- ('BYD', 'Tang', 2.0, 2023, 'черный', 'SUV'),
--- ('BYD', 'Han', 3.0, 2022, 'белая', 'sedan'),
--- ('Changan', 'CS35', 1.6, 2021, 'синий', 'crossover'),
--- ('Changan', 'Eado', 1.5, 2022, 'серебристая', 'sedan'),
--- ('Mercedes-Benz', 'GLC', 2.0, 2023, 'черный', 'SUV'),
--- ('Mercedes-Benz', 'C-Class', 2.0, 2022, 'красная', 'sedan');
+insert into cars (manufacturer, name, volume, creationDate, color, type)
+values ('Ford', 'Mustang', 3.2, 1993,  'коричневый', 'sedan'),
+       ('BMW', 'X5', 4.4, 2025,  'черный', 'SUV'),
+    ('Audi', 'A6', 2.0, 2023, 'синий', 'sedan'),
+    ('Toyota', 'Camry', 2.5, 2022, 'белый', 'sedan'),
+    ('Ford', 'Mustang', 5.0, 2021, 'красный', 'coupe'),
+    ('Lada', 'Vesta', 1.6, 2020, 'серебристый', 'sedan'),
+    ('Lada', 'Niva', 1.7, 2019, 'зеленый', 'SUV'),
+    ('Geely', 'Atlas', 2.0, 2023, 'черный', 'SUV'),
+    ('BYD', 'Song', 1.5, 2022, 'синий', 'crossover'),
+    ('Changan', 'CS75', 2.0, 2021, 'белый', 'SUV'),
+    ('Mercedes-Benz', 'E-Class', 3.0, 2024, 'серый', 'sedan'),
+('Audi', 'Q5', 2.0, 2022, 'черный', 'SUV'),
+('Audi', 'A4', 2.0, 2023, 'белый', 'sedan'),
+('Toyota', 'RAV4', 2.5, 2023, 'серебристый', 'SUV'),
+('Toyota', 'Corolla', 1.8, 2021, 'красный', 'sedan'),
+('Ford', 'Explorer', 3.5, 2022, 'синий', 'SUV'),
+('Ford', 'F-150', 3.5, 2023, 'черный', 'pickup'),
+('Lada', 'Granta', 1.6, 2021, 'белый', 'sedan'),
+('Lada', 'Xray', 1.6, 2022, 'зеленый', 'crossover'),
+('Geely', 'Coolray', 1.5, 2023, 'красный', 'crossover'),
+('Geely', 'Emgrand', 1.5, 2021, 'серый', 'sedan'),
+('BYD', 'Tang', 2.0, 2023, 'черный', 'SUV'),
+('BYD', 'Han', 3.0, 2022, 'белый', 'sedan'),
+('Changan', 'CS35', 1.6, 2021, 'синий', 'crossover'),
+('Changan', 'Eado', 1.5, 2022, 'серебристый', 'sedan'),
+('Mercedes-Benz', 'GLC', 2.0, 2023, 'черный', 'SUV'),
+('Mercedes-Benz', 'C-Class', 2.0, 2022, 'красный', 'sedan');
 
 
 
-select manufacturer, count(*) as amount from cars
-group by  manufacturer;
 
+-- select manufacturer, count(*) as amount from cars
+-- group by  manufacturer;
 
-select * from cars
+-- SELECT manufacturer, count(*) as amount FROM cars
+-- GROUP BY  manufacturer
+-- ORDER BY amount DESC LIMIT 1;
+--
+--
+-- select * from cars

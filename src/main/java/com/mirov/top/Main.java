@@ -39,7 +39,9 @@ public class Main {
 //        carService.printCarsByManufacture(manufacturer);
 
         //Фильтр для отображения автомобилей по указанному цвету
-        carService.printCarsByColor();
+        System.out.println("Введите цвет автомобиля:");
+        String colorCar = sc.next();
+        carService.printCarsByColor(colorCar);
 
     }
 }

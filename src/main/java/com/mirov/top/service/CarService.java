@@ -104,31 +104,43 @@ public class CarService {
         }
     }
 
-    public void printCarsByColor()
+    public void printCarsByColor(String color)
     {
         List<Car> cars = findAll();
-        List<String> color = new ArrayList<String>();
-        System.out.println("Выберите из предложенных цветов автомобиля: ");
+//        List<String> colorList = new ArrayList<String>();
+//        System.out.println("Выберите из предложенных цветов автомобиля: ");
+//        for (Car car : cars) {
+//
+//            colorList.add(car.getColor());
+//
+//        }
+//        Set<String> set = new HashSet<>(colorList);
+//        colorList.clear();
+//        colorList.addAll(set);
+//        for (String col : colorList) {
+//
+//            if(Objects.equals(col, colorList.getLast()))
+//            {
+//                System.out.println(col);
+//            }
+//            else
+//            {
+//                System.out.print(col + ", ");
+//
+//            }
+//
+//        }
+        boolean checkCar = false;
+
         for (Car car : cars) {
-
-            color.add(car.getColor());
-
+            if(car.getColor().equals(color))
+            {
+                System.out.println(car.getManufacturer() + " " + car.getName() + " " + car.getColor());
+                checkCar = true;
+            }
         }
-        Set<String> set = new HashSet<>(color);
-        color.clear();
-        color.addAll(set);
-        for (String col : color) {
-
-            if(Objects.equals(col, color.getLast()))
-            {
-                System.out.println(col);
-            }
-            else
-            {
-                System.out.print(col + ", ");
-
-            }
-
+        if (!checkCar) {
+            System.out.println("Машин такого цвета нет!");
         }
 
     }
