@@ -15,6 +15,10 @@ public class Car
         return name;
     }
 
+    public String getColor() {
+        return color;
+    }
+
     public int getAmount() {
         return amount;
     }

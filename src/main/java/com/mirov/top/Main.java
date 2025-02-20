@@ -11,7 +11,7 @@ public class Main {
         //Вывод всех автомобилей
         carService.printAllCars();
 
-        //Вывод всех произоводителей
+        //Вывод всех производителей
         carService.printManufacturers();
 
         //Вывод количество автомобилей определенного производителя
@@ -21,18 +21,25 @@ public class Main {
         carService.printMaxAndMinAmount();
 
         //Вывод автомобилей по конкретному году выпуска
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите год выпуска автомобиля:");
-        int carYear = sc.nextInt();
-        carService.printCarsByYear(carYear);
+          Scanner sc = new Scanner(System.in);
+//        System.out.println("Введите год выпуска автомобиля:");
+//        int carYear = sc.nextInt();
+//        carService.printCarsByYear(carYear);
 
         //Вывод автомобилей по диапазону года выпуска
-        System.out.println("Введите начальный диапазон года выпуска автомобиля:");
-        int startCarYear = sc.nextInt();
-        System.out.println("Введите конечный диапазон года выпуска автомобиля:");
-        int finalCarYear = sc.nextInt();
-        carService.printCarsByYearRange(startCarYear,finalCarYear);
+//        System.out.println("Введите начальный диапазон года выпуска автомобиля:");
+//        int startCarYear = sc.nextInt();
+//        System.out.println("Введите конечный диапазон года выпуска автомобиля:");
+//        int finalCarYear = sc.nextInt();
+//        carService.printCarsByYearRange(startCarYear,finalCarYear);
 
+        //Вывод автомобилей по конкретному производителю
+//        System.out.println("Введите производителя автомобиля:");
+//        String manufacturer = sc.next();
+//        carService.printCarsByManufacture(manufacturer);
+
+        //Фильтр для отображения автомобилей по указанному цвету
+        carService.printCarsByColor();
 
     }
 }

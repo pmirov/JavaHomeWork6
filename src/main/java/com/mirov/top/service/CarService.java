@@ -3,8 +3,7 @@ package com.mirov.top.service;
 import com.mirov.top.dao.CarDao;
 import com.mirov.top.entity.Car;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class CarService {
     private CarDao carDao = new CarDao();
@@ -87,6 +86,51 @@ public class CarService {
         if (!checkYear) {
             System.out.println("Машин в таком диапазоне года выпуска нет!");
         }
+    }
+
+    public void printCarsByManufacture(String manufacturer)
+    {
+        boolean checkCar = false;
+        List<Car> cars = findAll();
+        for (Car car : cars) {
+            if(car.getManufacturer().equals(manufacturer))
+            {
+                System.out.println(car.getName());
+                checkCar = true;
+            }
+        }
+        if (!checkCar) {
+            System.out.println("Машин такого производителя нет!");
+        }
+    }
+
+    public void printCarsByColor()
+    {
+        List<Car> cars = findAll();
+        List<String> color = new ArrayList<String>();
+        System.out.println("Выберите из предложенных цветов автомобиля: ");
+        for (Car car : cars) {
+
+            color.add(car.getColor());
+
+        }
+        Set<String> set = new HashSet<>(color);
+        color.clear();
+        color.addAll(set);
+        for (String col : color) {
+
+            if(Objects.equals(col, color.getLast()))
+            {
+                System.out.println(col);
+            }
+            else
+            {
+                System.out.print(col + ", ");
+
+            }
+
+        }
+
     }
 
 
