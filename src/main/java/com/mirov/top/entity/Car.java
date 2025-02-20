@@ -11,6 +11,10 @@ public class Car
     private String color;
     private int amount;
 
+    public float getVolume() {
+        return volume;
+    }
+
     public String getName() {
         return name;
     }

@@ -144,6 +144,21 @@ public class CarService {
         }
 
     }
+    public void printCarsByVolume(float volume)
+    {
+        boolean checkCar = false;
+        List<Car> cars = findAll();
+        for (Car car : cars) {
+            if(car.getVolume() == volume)
+            {
+                System.out.println(car.getManufacturer() + " " + car.getName() + ", объем двигателя: " + + car.getVolume());
+                checkCar = true;
+            }
+        }
+        if (!checkCar) {
+            System.out.println("Машин с таким объемом двигателя нет!");
+        }
+    }
 
 
 }

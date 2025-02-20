@@ -39,9 +39,14 @@ public class Main {
 //        carService.printCarsByManufacture(manufacturer);
 
         //Фильтр для отображения автомобилей по указанному цвету
+//        System.out.println("Введите цвет автомобиля:");
+//        String colorCar = sc.next();
+//        carService.printCarsByColor(colorCar);
+
+        //Фильтр для отображения автомобилей по объему двигателя
         System.out.println("Введите цвет автомобиля:");
-        String colorCar = sc.next();
-        carService.printCarsByColor(colorCar);
+        int volume = sc.nextInt();
+        carService.printCarsByVolume(volume);
 
     }
 }
