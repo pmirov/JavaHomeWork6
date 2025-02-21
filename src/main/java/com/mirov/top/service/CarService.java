@@ -108,29 +108,6 @@ public class CarService {
     public void printCarsByColor(String color)
     {
         List<Car> cars = findAll();
-//        List<String> colorList = new ArrayList<String>();
-//        System.out.println("Выберите из предложенных цветов автомобиля: ");
-//        for (Car car : cars) {
-//
-//            colorList.add(car.getColor());
-//
-//        }
-//        Set<String> set = new HashSet<>(colorList);
-//        colorList.clear();
-//        colorList.addAll(set);
-//        for (String col : colorList) {
-//
-//            if(Objects.equals(col, colorList.getLast()))
-//            {
-//                System.out.println(col);
-//            }
-//            else
-//            {
-//                System.out.print(col + ", ");
-//
-//            }
-//
-//        }
         boolean checkCar = false;
 
         for (Car car : cars) {
@@ -208,7 +185,28 @@ public class CarService {
         System.out.println("Машина удалена!");
     }
 
+    public void updateCar()
+    {
+        Car car = new Car();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите ID машины:");
+        int id = scan.nextInt();
+        System.out.println("Введите производителя машины:");
+        car.setManufacturer(scan.next());
+        System.out.println("Введите марку машины:");
+        car.setName(scan.next());
+        System.out.println("Введите цвет машины:");
+        car.setColor(scan.next());
+        System.out.println("Введите объем двигателя:");
+        car.setVolume(scan.nextFloat());
+        System.out.println("Введите дату производства:");
+        car.setCreationDate(scan.nextInt());
+        System.out.println("Введите тип кузова:");
+        car.setType(CarType.valueOf(scan.next()));
 
+        carDao.setUpdateItem(car, id);
+        System.out.println("Машина изменена!");
+    }
 
 }
 
