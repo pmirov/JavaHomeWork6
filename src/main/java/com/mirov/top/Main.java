@@ -55,7 +55,10 @@ public class Main {
 //        carService.printCarsByType(carType);
 
         //Добавление строки
-        carService.newCar();
+//        carService.newCar();
+
+        //Удаление строки
+        carService.delCar();
 
     }
 }

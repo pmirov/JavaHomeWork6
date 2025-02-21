@@ -14,6 +14,7 @@ public class CarDao {
                                                "group by  manufacturer;";
     private static final String CREATE_ITEM = "insert into cars (manufacturer, name, volume, creationDate, color, type) " +
                                                 "values (?, ?, ?, ?, ?, ?)";
+    private static final String DELETE_ITEM = "delete from cars where id = ?";
 
     public List<Car> selectAll() {
         List<Car> cars = new ArrayList<>();
@@ -102,6 +103,23 @@ public class CarDao {
         }
 
          catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+    public void deleteCar(int id) {
+
+        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/cars",
+                "postgres", "root");
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_ITEM))
+        {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        }
+
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
 

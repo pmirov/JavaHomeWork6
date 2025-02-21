@@ -198,6 +198,17 @@ public class CarService {
         System.out.println("Машина добавлена!");
     }
 
+    public void delCar()
+    {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ведите ID машины:");
+
+        carDao.deleteCar(scan.nextInt());
+        System.out.println("Машина удалена!");
+    }
+
+
 
 }
 
