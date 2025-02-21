@@ -50,9 +50,12 @@ public class Main {
 //        carService.printCarsByVolume(volume);
 
         //Фильтр для отображения автомобилей по типу кузова
-        System.out.println("Введите тип кузова автомобиля:");
-        CarType carType = CarType.valueOf(sc.next());
-        carService.printCarsByType(carType);
+//        System.out.println("Введите тип кузова автомобиля:");
+//        CarType carType = CarType.valueOf(sc.next());
+//        carService.printCarsByType(carType);
+
+        //Добавление строки
+        carService.newCar();
 
     }
 }

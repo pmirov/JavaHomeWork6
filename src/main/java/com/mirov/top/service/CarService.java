@@ -177,6 +177,27 @@ public class CarService {
         }
     }
 
+    public void newCar()
+    {
+        Car car = new Car();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите производителя машины:");
+        car.setManufacturer(scan.next());
+        System.out.println("Введите марку машины:");
+        car.setName(scan.next());
+        System.out.println("Введите цвет машины:");
+        car.setColor(scan.next());
+        System.out.println("Введите объем двигателя:");
+        car.setVolume(scan.nextFloat());
+        System.out.println("Введите дату производства:");
+        car.setCreationDate(scan.nextInt());
+        System.out.println("Введите тип кузова:");
+        car.setType(CarType.valueOf(scan.next()));
+
+        carDao.addCar(car);
+        System.out.println("Машина добавлена!");
+    }
+
 
 }
 

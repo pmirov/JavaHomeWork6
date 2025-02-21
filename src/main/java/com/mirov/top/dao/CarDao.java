@@ -12,6 +12,8 @@ public class CarDao {
     private static final String SELECT_MANUFACTURER = "select distinct manufacturer from cars";
     private static final String SELECT_AMOUNT = "select manufacturer, count(*) as amount from cars\n" +
                                                "group by  manufacturer;";
+    private static final String CREATE_ITEM = "insert into cars (manufacturer, name, volume, creationDate, color, type) " +
+                                                "values (?, ?, ?, ?, ?, ?)";
 
     public List<Car> selectAll() {
         List<Car> cars = new ArrayList<>();
@@ -82,6 +84,28 @@ public class CarDao {
             throw new RuntimeException(e);
         }
         return cars;
+    }
+
+    public void addCar(Car car) {
+
+        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/cars",
+                "postgres", "root");
+             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_ITEM))
+        {
+            preparedStatement.setString(1, car.getManufacturer());
+            preparedStatement.setString(2, car.getName());
+            preparedStatement.setFloat(3, car.getVolume());
+            preparedStatement.setInt(4, car.getCreationDate());
+            preparedStatement.setString(5, car.getColor());
+            preparedStatement.setString(6, String.valueOf(car.getType()));
+            preparedStatement.executeUpdate();
+        }
+
+         catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
 }
